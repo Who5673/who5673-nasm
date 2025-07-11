@@ -1,6 +1,6 @@
--- lua/who5673_nasm/completion_registers.lua
+-- lua/who5673-nasm/completion_registers.lua
 local cmp = require("cmp")
-local registers = require("who5673_nasm.registers")
+local registers = require("who5673-nasm.registers")
 
 local source = {}
 
@@ -14,7 +14,6 @@ end
 
 function source:complete(_, callback)
 	local kinds = cmp.lsp.CompletionItemKind
-
 	local items = {}
 
 	for bit_size, regs in pairs(registers) do
@@ -22,11 +21,11 @@ function source:complete(_, callback)
 			table.insert(items, {
 				label = reg,
 				kind = kinds.Variable,
+				detail = "Register " .. reg:upper(),
 				documentation = {
 					kind = "markdown",
-					value = "Register **" .. reg:upper() .. "** — `" .. bit_size .. "`",
+					value = "**Register " .. reg:upper() .. "** — " .. bit_size,
 				},
-				detail = "Register " .. reg:upper(),
 			})
 		end
 	end
