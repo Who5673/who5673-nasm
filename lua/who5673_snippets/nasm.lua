@@ -26,10 +26,16 @@ ls.add_snippets("nasm", {
 		}),
 		i(0),
 	}),
-	s("test", {
-		t({ {
-			"testtext!",
-		} }),
-		i(0),
+	s("program", {
+		t("section .data"),
+		t({ "", "\t" }),
+		i(1, ""),
+		t({
+			"",
+			"section .text",
+			"\tglobal _start",
+			"",
+			"_start:",
+		}),
 	}),
 })
