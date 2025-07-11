@@ -67,8 +67,9 @@ ls.add_snippets("nasm", {
 	s("exit", {
 		t("mov rax, 60"),
 		t({ "", "\tmov rdi, " }),
-		i(1, "; Write your exitcode"),
-		t("syscall"),
+		i(1, ""),
+		t({ "", "\tmov rdi, " }),
+		t("syscall  ; Take down the exit code in the current cursor location"),
 	}),
 	-- You can also add your custom snippets here
 })
