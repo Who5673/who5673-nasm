@@ -92,7 +92,7 @@ end, { expr = true, silent = true })
 ```
 - Then, execute this command:
 ```
-echo 'require("config.keymaps")' >> ~/.config/nvim/lua/config/keymaps.lua
+echo 'require("config.keymaps")' >> ~/.config/nvim/init.lua
 ```
 After all those Installation steps, you will have who5673-nasm plugin installed in your local user.
 
