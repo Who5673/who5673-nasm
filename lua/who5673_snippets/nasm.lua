@@ -2,8 +2,10 @@ local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
+local f = ls.function_node
 
 ls.add_snippets("nasm", {
+	-- Generate an example  NASM program
 	s("printHello", {
 		t({
 			"section .data",
@@ -26,6 +28,7 @@ ls.add_snippets("nasm", {
 		}),
 		i(0),
 	}),
+	-- Generate a template for you to start coding faster
 	s("program", {
 		t("section .data"),
 		t({ "", "\t" }),
@@ -38,4 +41,34 @@ ls.add_snippets("nasm", {
 			"_start:",
 		}),
 	}),
+	-- Create an example of a function
+	s("sum", {
+		t({
+			"section .text",
+			"\tglobal sum",
+			"",
+			"sum:",
+			"\tmov rax, rdi",
+			"\tadd rax, rsi",
+			"\tret",
+		}),
+	}),
+	-- This snippet is used to create a function
+	s("funtn", {
+		i(1, "functionname"),
+		t({ ":" }),
+		t({ "", "\t" }),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\tret" }),
+	}),
+	-- Generate exit syscall:
+	s("exit", {
+		t("mov rax, 60"),
+		t({ "", "\tmov rdi, " }),
+		i(1, "; Write your exitcode"),
+		t("syscall"),
+	}),
+	-- You can also add your custom snippets here
 })
