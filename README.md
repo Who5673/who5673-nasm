@@ -59,8 +59,13 @@ touch $HOME/.config/nvim/lua/who5673-nasm.lua
 - Whether you use `init.lua` (in `$HOME/.config/nvim/lua/plugins/`) or that `who5673-nasm.lua`, you still need to add this script into `return {...}` command (must learn how to program Lua if you want to understand):
 ```
 return {
-  nothing (WIP)
-}
+  "Who5673/who5673-nasm",
+  dependencies = {
+    "L3MON4D3/LuaSnip",
+  },
+  ft = "nasm",
+  lazy = true,
+},
 ```
 
 <hr />
