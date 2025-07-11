@@ -1,6 +1,6 @@
 -- lua/who5673-nasm/completion_registers.lua
 local cmp = require("cmp")
-local registers = require("who5673-nasm.registers")
+local registers = require("who5673_nasm.registers")
 
 local source = {}
 
