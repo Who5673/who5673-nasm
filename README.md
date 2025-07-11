@@ -51,7 +51,8 @@ __Manufacturing date__ : The 13<sup>th</sup> of July, 2025
 **GitHub link**: `https://github.com/Who5673/who5673-nasm` (current page)
 
 ## Installation (Lazy only)
-**Install LuaSnip first** (GitHub Link: [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip))
+**Install LuaSnip first** (GitHub Link: [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)).  
+
 __Then:__
 - If you do not install plugin via `$HOME/.config/nvim/lua/plugins/init.lua`, you need to create `who5673-nasm.lua` first using:
 ```
@@ -121,8 +122,9 @@ Come up with and answer that question if you want. You do not need to send your 
 
 Have fun while using my plugin.  
 
-<hr />
-# Metadata about this plugin                                                                                                                                                                                     i
+
+# Metadata about this plugin:
+
 ## Copyright
 Copyright &copy; 2025 Who5673. All Rights Reserved. 
 ## License: 
