@@ -1,1 +1,1 @@
-require("who5673-nasm")
+require("who5673-nasm.init")
