@@ -1,1 +1,1 @@
-require("who5673-nasm.init")
+vim.notify("Plugin who5673 has loaded!")
