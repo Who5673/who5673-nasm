@@ -125,6 +125,7 @@ Now you have done the installation of `who5673-nasm`.
 - function (snippet): Generate a template to help you create a function.
 - program (snippet): Make a layout of NASM script so as to let you code faster (as you do not need to code the start of the program).
 - printHello (snippet): Generate a demo script in NASM (it prints "Hello world") when being compiled if you do not modifier it after using this snippet.
+- basicoutput (snippet): Generate a tamplate of a basic output which prints the text into stdout (terminal screen).
 
 I also have some videos for you to know what you get after installing this plugin:
 
