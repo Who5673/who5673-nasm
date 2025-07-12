@@ -40,7 +40,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 
-# This plugin has not been released yet.
 # who5673-nasm - A plugin for Lazy.nvim that helps you program Netwide Assembler (NASM) language.
 The plugin named `coc-nasm` has been released since the 6<sup>th</sup> of July, 2025, to help you code faster with snippets and auto-completions. However, It needs `coc.nvim` as its dependency, and `coc.nvim` is not a modern plugin manager in `nvim` (due to the action that we use Lazy and Mason as our plugin manager instead). We cannot download it if we do not use `coc.nvim` plugin manager (as that plugin makes for normal Vi Improved, not Neovim, though it still can run in it via `init.vim`). 
 
