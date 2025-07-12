@@ -72,7 +72,6 @@ return {
 	[".bss"] = ".bss section (uninitialized data or buffers)",
 	[".text"] = ".text section (code)",
 	["_start"] = "Program entry point",
-	section = "Define a section (.data, .bss, .text...)",
 	global = "Declare a symbol globally visible",
 	db = "Define byte (1 byte)",
 	dw = "Define word (2 bytes, 16-bit)",
