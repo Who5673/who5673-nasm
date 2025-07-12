@@ -84,8 +84,8 @@ ls.add_snippets("nasm", {
 		t({
 			"mov rax, 1",
 			"mov rdi, 1",
+			"mov rsi, ",
 		}),
-		t("", "mov rsi, "),
 		i(1, "printvalue"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
