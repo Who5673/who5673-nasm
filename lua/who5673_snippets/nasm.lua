@@ -80,5 +80,17 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t({ "", "\t" }),
 	}),
+	s("basicoutput", {
+		t({
+			"mov rax, 1",
+			"mov rdi, 1",
+		}),
+		t("mov rsi, "),
+		i(1, "printvalue"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "mov rdx, len", "", "syscall" }),
+	}),
 	-- You can also add your custom snippets here
 })

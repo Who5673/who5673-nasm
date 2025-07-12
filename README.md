@@ -42,17 +42,17 @@ SOFTWARE.
 
 # This plugin has not been released yet.
 # who5673-nasm - A plugin for Lazy.nvim that helps you program Netwide Assembler (NASM) language.
-The plugin named `coc-nasm` has been released since the 6<sup>th</sup> of July, 2025, to help you code faster with snippets and auto-completions. However, It needs `coc.nvim` as its dependency, and `coc.nvim` is not a modern plugin manager in Neovim (due to the action that we use Lazy and Mason as our plugin manager instead). We cannot download it if we do not use `coc.nvim` plugin manager (as that plugin makes for normal Vi Improved, not Neovim, though it still can run in it via `init.vim`). 
+The plugin named `coc-nasm` has been released since the 6<sup>th</sup> of July, 2025, to help you code faster with snippets and auto-completions. However, It needs `coc.nvim` as its dependency, and `coc.nvim` is not a modern plugin manager in `nvim` (due to the action that we use Lazy and Mason as our plugin manager instead). We cannot download it if we do not use `coc.nvim` plugin manager (as that plugin makes for normal Vi Improved, not Neovim, though it still can run in it via `init.vim`). 
 
 From that reason, `who5673-nasm` is going to be developed as a plugin which helps you code faster like `coc-nasm` on Lazy plugin manager. We will go through that plug in order to find some information about it.
 
 ## Basic information about who5673-nasm:
-__Manufacturing date__ : The 13<sup>th</sup> of July, 2025  
+__Manufacturing date__ : The 13<sup>th</sup> of July 2025  
 **GitHub link**: `https://github.com/Who5673/who5673-nasm` (current page)
 
 ## Installation (Lazy only)
-**Install LuaSnip first** (GitHub Link: [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)).  
-**Install nvim-cmp** (GitHub Link: [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)) but __not now__. Let me __teach__ you how to do that later, as if you install using a wrong way, `who5673-nasm` plugin can be __useless__.
+**Install `LuaSnip` first** (GitHub Link: [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)).  
+**Install `nvim-cmp`** (GitHub Link: [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)) but __not now__. Let me __teach__ you how to do that later, as if you install using a wrong way, `who5673-nasm` plugin can be __useless__.
 
 __Then:__
 - If you do not install plugin via `$HOME/.config/nvim/lua/plugins/init.lua`, you need to create `who5673-nasm.lua` first using:
@@ -65,6 +65,7 @@ return {
   "Who5673/who5673-nasm",
   dependencies = {
     "L3MON4D3/LuaSnip",
+    "hrsh7th/nvim-cmp"
   },
   ft = "nasm",
   lazy = true,
@@ -119,7 +120,7 @@ Now you have done the installation of `who5673-nasm`.
 ## Basic features:
 `who5673-nasm` has many snippets and auto-completions such as:
 - Having completions for 64-bit, 32-bit, 16-bit, 8-bit and segment registers.
-- Supports many NASM commands.
+- Supports many Netwide Assembler commands.
 - sum (snippet): Generate an example of a function in NASM.
 - exit (snippet): Generate the script to exit a program in NASM.
 - function (snippet): Generate a template to help you create a function.
@@ -131,7 +132,7 @@ I also have some videos for you to know what you get after installing this plugi
 ## How to use snippets in who5673-nasm:
 Just like how you deal with snippets and completions in Neovim.  
 - Choose the snippet or completion you want to use. 
-- LuaSnip will initialize the snippets.
+- `LuaSnip` will initialize the snippets.
 - `nvim-cmp` will show them, also initialize the completions.  
 So do not be worry that the snippets and completions will not appear. I also place my contact at `contact.txt` in GitHub link. I, nevertheless, still need time to read your report.
 
@@ -150,7 +151,10 @@ Have fun while using my plugin.
 
 # Metadata about this plugin:
 
-## Copyright
-Copyright &copy; 2025 Who5673. All Rights Reserved. 
+## Product meta information:
+Copyright &copy; 2025 Who5673. All Rights Reserved.  
+
+This is an official NASM plugin made by Who5673.  
+
 ## License: 
 MIT
