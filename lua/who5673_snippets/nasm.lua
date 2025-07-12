@@ -35,6 +35,7 @@ ls.add_snippets("nasm", {
 		i(1, ""),
 		t({
 			"",
+			"",
 			"section .text",
 			"\tglobal _start",
 			"",
