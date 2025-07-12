@@ -52,6 +52,7 @@ __Manufacturing date__ : The 13<sup>th</sup> of July, 2025
 
 ## Installation (Lazy only)
 **Install LuaSnip first** (GitHub Link: [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)).  
+**Install nvim-cmp** (GitHub Link: [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)) but __not now__. Let me __teach__ you how to do that later, as if you install using a wrong way, `who5673-nasm` plugin can be __useless__.
 
 __Then:__
 - If you do not install plugin via `$HOME/.config/nvim/lua/plugins/init.lua`, you need to create `who5673-nasm.lua` first using:
@@ -69,46 +70,70 @@ return {
   lazy = true,
 },
 ```
+- Install `nvim-cmp` like this. You do not need to take down like this script, but that thing will help you know the way to configure snippets and completions for who5673-nasm:
 
-- Add this script into `~/.config/nvim/lua/config/keymaps.lua` 
+`$HOME/.config/nvim/lua/plugins/cmp.lua` (if you do not have, please manually make it by yourself)
 ```
-local ls = require("luasnip")
+return {
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp",
+    },
+    enabled = true, -- Very important! Lazyvim may disable this plugin when we download it.
+    config = function()
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
 
-vim.keymap.set({ "i", "s" }, "<Tab>", function()
-  if ls.expand_or_jumpable() then
-    return "<cmd>lua require('luasnip').expand_or_jump()<CR>"
-  else
-    return "<Tab>"
-  end
-end, { expr = true, silent = true })
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        sources = {
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "path" },
+          { name = "nasm_registers" },
+          { name = "nasm_instructions" },
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<Tab>"] = cmp.mapping.select_next_item(),
+          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-Space>"] = cmp.mapping.complete(),
+        }),
+      })
+    end,
+  },
+}
 
-vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-  if ls.jumpable(-1) then
-    return "<cmd>lua require('luasnip').jump(-1)<CR>"
-  else
-    return "<S-Tab>"
-  end
-end, { expr = true, silent = true })
 ```
-- Then, execute this command:
-```
-echo 'require("config.keymaps")' >> ~/.config/nvim/init.lua
-```
-After all those Installation steps, you will have who5673-nasm plugin installed in your local user.
+Now you have done the installation of `who5673-nasm`.
 
 ## Basic features:
-who5673-nasm has many snippets and auto-completions such as:
-- Having completions for 64-bit, 32-bit, 16-bit and 8-bit registers.
+`who5673-nasm` has many snippets and auto-completions such as:
+- Having completions for 64-bit, 32-bit, 16-bit, 8-bit and segment registers.
+- Supports many NASM commands.
 - sum (snippet): Generate an example of a function in NASM.
 - exit (snippet): Generate the script to exit a program in NASM.
-- funtn (snippet): Generate a template to help you create a function.
+- function (snippet): Generate a template to help you create a function.
 - program (snippet): Make a layout of NASM script so as to let you code faster (as you do not need to code the start of the program).
 - printHello (snippet): Generate a demo script in NASM (it prints "Hello world") when being compiled if you do not modifier it after using this snippet.
 
+I also have some videos for you to know what you get after installing this plugin:
+
 ## How to use snippets in who5673-nasm:
-- Make sure you have done the Installation above.
-- Type exactly the snippet you want to use.
-- After that, press Tab and you will see the result.
+Just like how you deal with snippets and completions in Neovim.  
+- Choose the snippet or completion you want to use. 
+- LuaSnip will initialize the snippets.
+- `nvim-cmp` will show them, also initialize the completions.  
+So do not be worry that the snippets and completions will not appear. I also place my contact at `contact.txt` in GitHub link. I, nevertheless, still need time to read your report.
 
 ## Note:
 - As `nvim` is a hard Integrated Develop Environment for most people, I think you might want not to configure more things before using this plugin effectively.

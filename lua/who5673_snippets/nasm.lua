@@ -54,7 +54,7 @@ ls.add_snippets("nasm", {
 		}),
 	}),
 	-- This snippet is used to create a function
-	s("funtn", {
+	s("function", {
 		i(1, "functionname"),
 		t({ ":" }),
 		t({ "", "\t" }),
@@ -70,6 +70,14 @@ ls.add_snippets("nasm", {
 		i(1, ""),
 		t({ "", "" }),
 		t("syscall  ; Take down the exit code in the current cursor location"),
+	}),
+	s("section", {
+		t("section "),
+		i(1, "sectionname"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t" }),
 	}),
 	-- You can also add your custom snippets here
 })
