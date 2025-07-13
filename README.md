@@ -129,7 +129,7 @@ Now you have done the installation of `who5673-nasm`.
 
 I also have some example screens for you to know what you get after installing this plugin:  
 
-![Demo coc-nasm plugin](media/gitnvim.gif)  
+![Demo who5673-nasm plugin](media/gitnvim.gif)  
 
 ## How to use snippets in who5673-nasm:
 Just like how you deal with snippets and completions in Neovim.  
