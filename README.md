@@ -127,7 +127,9 @@ Now you have done the installation of `who5673-nasm`.
 - printHello (snippet): Generate a demo script in NASM (it prints "Hello world") when being compiled if you do not modifier it after using this snippet.
 - basicoutput (snippet): Generate a tamplate of a basic output which prints the text into stdout (terminal screen).
 
-I also have some videos for you to know what you get after installing this plugin:
+I also have some example screens for you to know what you get after installing this plugin:  
+
+![Demo coc-nasm plugin](media/gitnvim.gif)  
 
 ## How to use snippets in who5673-nasm:
 Just like how you deal with snippets and completions in Neovim.  
@@ -145,6 +147,10 @@ So do not be worry that the snippets and completions will not appear. I also pla
 ___Would you like to create and develop plugins for programming Assembly Languages in the world, especially in Lazy.nvim and Mason.nvim?___  
 Come up with and answer that question if you want. You do not need to send your answer to me.  
 - Even though this plugin is not famous anymore, I will carry on developing newer versions of this plugin with no reasons.  
+
+## See also
+`coc-nasm` is another repository that is make by me (Who5673) for programming NASM language using `coc.nvim`. You can see that plugin by going to this website:  
+[https://github.com/Who5673/coc-nasm](https://github.com/Who5673/coc-nasm)  
 
 Have fun while using my plugin.  
 
