@@ -12,6 +12,7 @@ return {
 	or_ = "Bitwise OR",
 	cmp = "Compare operands",
 	default = "This code must be at the first line of a NASM script if you combine with rel in order to combine and extern with C/C++ via gcc/g++.",
+	rel = "rel command: Use a relative address for something",
 	neg = "Compute the **absolute value** (abs) of a register",
 	lea = "lea command to work with memory",
 	rep = "Repeat string operation",
@@ -52,6 +53,7 @@ return {
 	setnz = "Set if not zero. ZF = 0 (same as SETNE)",
 	setp = "Set if parity even. PF = 1",
 	setnp = "Set if parity odd. PF = 0",
+	byte = "Used to compare the bytes of 2 things",
 	-- Jump commands
 	jmp = "Unconditional jump",
 	je = "Jump if 2 value is equal",
