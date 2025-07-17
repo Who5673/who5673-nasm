@@ -49,11 +49,11 @@ From that reason, `who5673-nasm` is going to be developed as a plugin which help
 __Manufacturing date__ : The 13<sup>th</sup> of July 2025  
 **GitHub link**: `https://github.com/Who5673/who5673-nasm` (current page)
 
-## Installation (Lazy only)
+## Installation 
 **Install `LuaSnip` first** (GitHub Link: [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)).  
 **Install `nvim-cmp`** (GitHub Link: [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)) but __not now__. Let me __teach__ you how to do that later, as if you install using a wrong way, `who5673-nasm` plugin can be __useless__.
 
-__Then:__
+### Lazy.nvim:
 - If you do not install plugin via `$HOME/.config/nvim/lua/plugins/init.lua`, you need to create `who5673-nasm.lua` first using:
 ```
 touch $HOME/.config/nvim/lua/who5673-nasm.lua
@@ -83,6 +83,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
+      "Who5673/who5673-nasm",
     },
     enabled = true, -- Very important! Lazyvim may disable this plugin when we download it.
     config = function()
@@ -114,7 +115,64 @@ return {
 }
 
 ```
-Now you have done the installation of `who5673-nasm`.
+Now you have done the installation of `who5673-nasm` in `lazy.nvim`.
+
+### Packer.nvim:
+The file path you need to install this plugin is just like `lazy.nvim`, but has different script.
+
+`$HOME/.config/nvim/lua/plugins/init.lua`  or `$HOME/.config/nvim/lua/plugins.lua`:
+```
+use {
+	'Who5673/who5673-nasm',
+	opt = true,
+	requires = {{'L3MON4D3/LuaSnip', opt = true}, {'hrsh7th/nvim-cmp', opt = true}}
+	ft = {'nasm'},
+}
+```  
+
+Just like the Lazy one, I need to tell you how to configure `nvim-cmp` in order to make my plugin work well.
+
+`$HOME/.config/nvim/lua/plugins/cmp.lua`:
+```
+use {
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  requires = {
+    { "L3MON4D3/LuaSnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "Who5673/who5673-nasm" },
+  },
+  config = function()
+    local cmp = require("cmp")
+    local luasnip = require("luasnip")
+
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
+      },
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "path" },
+        { name = "nasm_registers" },
+        { name = "nasm_instructions" },
+      }),
+      mapping = cmp.mapping.preset.insert({
+        ["<Tab>"] = cmp.mapping.select_next_item(),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-Space>"] = cmp.mapping.complete(),
+      }),
+    })
+  end,
+}
+```
+
+Now you have done the installation of `who5673-nasm` in `packer.nvim`.
 
 ## Basic features:
 `who5673-nasm` has many snippets and auto-completions such as:
