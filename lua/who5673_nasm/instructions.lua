@@ -1,6 +1,22 @@
 -- lua/who5673_nasm/instructions.lua
 
 return {
+	-- Float commands (arithmetic):
+	fadd = "Like `add` but used for float numbers, especially 80-bit float.\nExample: fadd st0, st1",
+	fsub = "Like `sub` but used for floating point numbers.\nExample: fsub st0, st1    ; st0 = st0 - st1",
+	fsubr = "The reverse of fsub.\nfsubr st0, st1    ; st0 = st1 - st0",
+	fmul = "Like `mul` but used for floating point numbers.\nExample: fmul st0, st1",
+	fdiv = "Like `div` but used for floating point numbers.\nExample: fdiv st0, st1    ; st0 = st0 / st1",
+	fdivr = "The reverse of fdiv.\nfdivr st0, st1.   ; st0 = st1 / st0",
+	-- Float commands (load ans store):
+	fld = "Load something into Floating Point Unit stack (**default pushed target: st(0)** (unsigned).\nExample: fld dword 1.5)",
+	fild = "Load integer as float onto Floating Point Unit stack",
+	fst = "Stire float value from Floating Point Unit stack (without pop)",
+	fstp = "Store float value from Floating Point Unit stack (and pop",
+	fist = "Store Floating Point Unit float as integer (without pop)",
+	fistp = "Store Floating Point Unit float as integer (and pop)",
+	frndint = "Round st0 to an integer based on current Floating Point Unit rounding mode",
+	fldcw = "Push a value into Floating Point Unit control word for dealing with exceptions, accuracy, rounding numbers,...\nSyntax: `fldcw [mem16]`. (**Hint: [variable] rounds toward zero with variable = 0x0F7F**).\n00 -> Round to nearest; 01 -> round down; 10 -> Round up; 11 -> Truncate\n. **Default: 0x037F(hex) = 895(dec)**.",
 	-- Normal commands:
 	mov = "Move data from source to destination",
 	inc = "Increment operand by 1",
@@ -12,6 +28,7 @@ return {
 	or_ = "Bitwise OR",
 	cmp = "Compare operands",
 	default = "This code must be at the first line of a NASM script if you combine with rel in order to combine and extern with C/C++ via gcc/g++.",
+	to = "Specify the target st(i) to be added in Floating Point Unit stack, default thing used to add is st0.\n Example: fadd to st2",
 	rel = "rel command: Use a relative address for something",
 	neg = "Compute the **absolute value** (abs) of a register",
 	lea = "lea command to work with memory",
