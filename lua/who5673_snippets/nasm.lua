@@ -262,6 +262,29 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 	}),
+	s("%endif", {
+		t("%endif"),
+	}),
+	s("%ifctx", {
+		t("%ifctx "),
+		i(1, "condition"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+	}),
+	s("%elifctx", {
+		t("%elifctx "),
+		i(1, "condition"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+	}),
+	s("%else", {
+		t({
+			"%else",
+			"\t",
+		}),
+	}),
 	s("%line", {
 		t("%line "),
 		i(1, "number"),
