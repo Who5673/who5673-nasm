@@ -168,12 +168,9 @@ ls.add_snippets("nasm", {
 	}),
 	s("%endmacro", {
 		t("%endmacro "),
-		i(1, "something"),
-		f(function(_, snip)
-			return snip.env.SELECT_RAW or ""
-		end, {}, { user_args = {} }),
-		t(" "),
-		t("value"),
+	}),
+	s("%endif", {
+		t("%endif "),
 	}),
 	s("%defstr", {
 		t("%defstr "),
