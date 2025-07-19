@@ -151,7 +151,7 @@ ls.add_snippets("nasm", {
 	}),
 	s("%macro", {
 		t("%macro "),
-		i(1, "macroname"),
+		i(1, "[macroname] [number of parameters]"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
@@ -175,7 +175,6 @@ ls.add_snippets("nasm", {
 		t(" "),
 		t("value"),
 	}),
-
 	s("%defstr", {
 		t("%defstr "),
 		i(1, "something"),
@@ -261,8 +260,29 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 	}),
-	s("%endif", {
-		t("%endif"),
+	s("%if", {
+		t("%if "),
+		i(1, "condition"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ " n", "\t", "%endif" }),
+	}),
+	s("%ifdef", {
+		t("%ifdef "),
+		i(1, "defined_condition"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ " n", "\t", "%endif" }),
+	}),
+	s("%rep", {
+		t("%rep "),
+		i(1, "times"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ " n", "\t", "%endrep" }),
 	}),
 	s("%ifctx", {
 		t("%ifctx "),
