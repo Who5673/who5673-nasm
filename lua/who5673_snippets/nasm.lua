@@ -112,6 +112,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t('"'),
 	}),
+	-- % commands
 	s("%define", {
 		t("%define "),
 		i(1, "something"),
@@ -119,20 +120,15 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t(" "),
-		i(1, "value"),
-		f(function(_, snip)
-			return snip.env.SELECT_RAW or ""
-		end, {}, { user_args = {} }),
+		t("value"),
 	}),
 	s("%idefine", {
+		t("%idefine "),
 		i(1, "something"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t(" "),
-		i(1, "value"),
-		f(function(_, snip)
-			return snip.env.SELECT_RAW or ""
-		end, {}, { user_args = {} }),
+		t("value"),
 	}),
 })
