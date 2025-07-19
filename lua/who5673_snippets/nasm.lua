@@ -112,5 +112,37 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t('"'),
 	}),
-	-- You can also add your custom snippets here
+	s("%define", {
+		i(1, "something"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(" "),
+		i(1, "value"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+	}),
+	s("%define", {
+		i(1, "something"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(" "),
+		i(1, "value"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+	}),
+	s("%idefine", {
+		i(1, "something"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(" "),
+		i(1, "value"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+	}),
 })
