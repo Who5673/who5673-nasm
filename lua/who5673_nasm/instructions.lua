@@ -87,8 +87,6 @@ return {
 	es = "Register es (Extra Segment)",
 	fs = "Register fs",
 	gs = "Register gs",
-	-- %sth commands:
-
 	-- Other important words
 	[".data"] = ".data section (initialized data)",
 	[".bss"] = ".bss section (uninitialized data or buffers)",
