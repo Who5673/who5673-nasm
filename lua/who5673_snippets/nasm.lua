@@ -156,8 +156,10 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t(" "),
-		t("n\n"),
-		t("\t"),
+		t({
+			"\n",
+			"\t",
+		}),
 	}),
 	s("%imacro", {
 		t("%imacro "),
