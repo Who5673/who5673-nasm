@@ -70,7 +70,7 @@ ls.add_snippets("nasm", {
 		t({ "", "mov rdi, " }),
 		i(1, ""),
 		t({ "", "" }),
-		t("syscall  ; Take down the exit code in the current cursor location"),
+		t("syscall"),
 	}),
 	s("section", {
 		t("section "),
@@ -113,17 +113,7 @@ ls.add_snippets("nasm", {
 		t('"'),
 	}),
 	s("%define", {
-		i(1, "something"),
-		f(function(_, snip)
-			return snip.env.SELECT_RAW or ""
-		end, {}, { user_args = {} }),
-		t(" "),
-		i(1, "value"),
-		f(function(_, snip)
-			return snip.env.SELECT_RAW or ""
-		end, {}, { user_args = {} }),
-	}),
-	s("%define", {
+		t("%define "),
 		i(1, "something"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
