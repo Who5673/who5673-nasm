@@ -151,12 +151,13 @@ ls.add_snippets("nasm", {
 	}),
 	s("%macro", {
 		t("%macro "),
-		i(1, "something"),
+		i(1, "macroname"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t(" "),
-		t("value"),
+		t("n"),
+		t("", "\t"),
 	}),
 	s("%imacro", {
 		t("%imacro "),
