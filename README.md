@@ -99,7 +99,6 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
-      "Who5673/who5673-nasm",
     },
     enabled = true, -- Very important! Lazyvim may disable this plugin when we download it.
     config = function()
