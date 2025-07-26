@@ -60,7 +60,8 @@ First, run:
 ```
 git config --global credential.helper store
 ```
-Or use SSH Key instead. I have added this method as since July 25<sup>th</sup>, 2025, I have a problem while cloning this plugin (git prompts for username and password, since they are all deprecated).
+Or use SSH Key instead. I have added this method as since July 25<sup>th</sup>, 2025, I have a problem while cloning this plugin (git prompts for username and password, since they are all deprecated).  
+
 Recommend to create your own GPG or SSH key before using this plugin.
 
 Then:
