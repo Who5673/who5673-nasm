@@ -53,7 +53,8 @@ __Manufacturing date__ : The 13<sup>th</sup> of July 2025
 ```
 https://who5673.github.io/coc-nasm-web
 ```
-- In order to help you programm Netwide Assembler language, we are going to make a website for you.
+- In order to help you program Netwide Assembler language, we are going to make a website for you.
+- However, this website is being worked in progress.
 
 ## Installation 
 First, run:
