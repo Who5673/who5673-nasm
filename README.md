@@ -84,7 +84,7 @@ return {
   },
   ft = "nasm",
   lazy = true,
-},
+}
 ```
 - Install `nvim-cmp` like this. You do not need to take down like this script, but that thing will help you know the way to configure snippets and completions for who5673-nasm:
 
