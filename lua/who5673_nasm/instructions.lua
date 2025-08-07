@@ -52,6 +52,8 @@ return {
 	div = "Divide (**unsigned**) 2 numbers",
 	idiv = "Divide (**signed**) 2 numbers",
 	int = "Interrupt (normally for 32-bit architecture).\n**syscall**: int 0x80.\n**BIOS video services**: int 0x10.\n**BIOS disk services**: int 0x13.\n**DOS interrupt**: int 0x21.\n**Breakpoint**: int 0x03.\n**Divide By Zero**: int 0x00.",
+	cli = "Clear interrupt",
+	hlt = "(**Halt**) Wait for the hardware signal, does not spin CPU",
 	ret = "Return from procedure, **rax** is the most important return value if you create a label that returns an integer",
 	leave = "Cleans the stack frame and restore the previous value (which is initialized before entering)",
 	push = "push to stack",
