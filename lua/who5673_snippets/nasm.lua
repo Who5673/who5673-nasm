@@ -975,21 +975,4 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 	}),
-
-	-- Standard Macros
-	s("__?NASM_VERSION_ID?__", {
-		t("__?NASM_VERSION_ID?__"),
-	}),
-	s("__?NASM_VER?__", {
-		t("__?NASM_VER?__"),
-	}),
-	s("__?FILE?__", {
-		t("__?FILE?__"),
-	}),
-	s("__?LINE?__", {
-		t("__?LINE?__"),
-	}),
-	s("__?BITS?__", {
-		t("__?BITS?__"),
-	}),
 })

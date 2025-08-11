@@ -151,4 +151,17 @@ return {
 	msg = "Common label for messages",
 	buffer = "Common label for buffer",
 	len = "Common label for string length",
+
+	-- Standard macros:
+	["__?NASM_VERSION_ID?__"] = "Returns Netwide Assembler version ID (**dword integer**)",
+	["__?NASM_VER?__"] = "Returns Netwide Assembler current version inside a script (**bytes data**)",
+	["__?FILE?__"] = "Returns the name of the input file",
+	["__?LINE?__"] = "Returns the number of current line in a file",
+	["__?BITS?__"] = [[
+Return the current code generation mode.
+Current code generation mode can be defined by using BITS command:
+```
+bits 16    ; Code generation: 16-bit mode (great for making a BOOTLOADER).
+```
+]],
 }
