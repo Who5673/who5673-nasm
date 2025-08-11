@@ -161,7 +161,21 @@ return {
 Return the current code generation mode.
 Current code generation mode can be defined by using BITS command:
 ```
-bits 16    ; Code generation: 16-bit mode (great for making a BOOTLOADER).
+BITS 16    ; Code generation: 16-bit mode (great for making a BOOTLOADER).
 ```
 ]],
+	["__?OUTPUT_FORMAT?__"] = [[
+Returns the **format type** of the file.
+**Format type** of the file can be given using the **parameter `-f`** to assemble a file into an **object file** (.obj in Windows, .o in Linux distros). For instance:
+```
+nasm -f elf64 main.nasm -o main.o   # Format can be elf64, win64, elf32, win32, bin,..., which depends on the Instruction Set Architecture of a hardware device.
+```
+So that the macro returns "elf64" value.
+  ]],
+	["__?DEBUG_FORMAT?__"] = [[
+If the debug format is enabled, it returns the debug format.
+Otherwise, it returns `null`.
+
+The debug format can be found using `-F` and `-g` option. Type `nasm -f output y` for a list.
+  ]],
 }
