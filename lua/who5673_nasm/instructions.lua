@@ -192,7 +192,7 @@ The debug format can be found using `-F` and `-g` option. Type `nasm -f output y
 Returns the POSIX TIME (qword integer).
 
 # What is POSIX TIME?
-- POSIX TIME is a number of seconds that has been from the 1<sup>st</sup> of January in 1970 at 00:00:00 UTC.
+- POSIX TIME is a number of seconds that has been from the 1^st of January in 1970 at 00:00:00 UTC.
 - Calculate the POSIX TIME (unit: seconds):
 
 ```
