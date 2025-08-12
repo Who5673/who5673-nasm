@@ -65,7 +65,23 @@ return {
 	sar = "Shift bits right (>>) (**signed**).\n**Syntax**: `sar destination, source`.",
 	syscall = "Call the system kernel",
 	extern = "Declare external function (usually from libraries)",
-	align = "Align N to optimize memory (common values: 16, 64)",
+	align = [[
+align N           ; align on N-byte boundary (common values: 4, 16, 64)
+align 8,db 0x0a   ; pad with 0x0As rather than NOPs
+align 16,resz 1   ; align to 16 zword in the BSS section, zword 512-bit
+  ]],
+	alignb = "Align N byte to optimize memory (common values: 16, 64)",
+	sectalign = [[
+This align macro can be used at any time. For example:
+
+```
+SECTALIGN 16    ; Sets the section alignment requirements to 16 bytes
+                ; Once increased it can not be decreased, the magnitude may grow only.
+```
+You can turn ON or OFF this alignment.
+  ]],
+	on = "Turn on the SECTALIGN",
+	off = "Turn off the SECTALIGN",
 	stosb = "Store bytes to dest (often with REP)",
 	cmpsb = "Compare byte strings (often with REPNE)",
 	repne = "Repeat while not equal (for CMPSB)",
@@ -206,5 +222,12 @@ Returns the POSIX TIME (qword integer).
 **Expire time** (YYYY-MM-DD):
 - dword (32-bit): 2038-01-19 (Year 2038 problem).
 - qword (64-bit): about the year ~200 000 000 000.
+  ]],
+	["__?PASS?__"] = [[
+Assembly pass.
+This macro defined to be 1 on preparatory passes, and 2 on the final pass. In preprocess-only mode, it is set to 3.  
+When running only to generate dependencies (because of the `-M` or `-MG` option), it is set to 0.  
+
+**It is strongly recommended to avoid using this macro if at all possible. It is tremendously easy to generate very strange errors by misusing it, and the semantics may change in future versions of NASM.**
   ]],
 }

@@ -975,4 +975,14 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 	}),
+
+	-- Standard macros:
+	s("__?USE_package?__", {
+		t("__?USE_"),
+		i(1, "PACKAGE"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t("?__"),
+	}),
 })
