@@ -178,4 +178,33 @@ Otherwise, it returns `null`.
 
 The debug format can be found using `-F` and `-g` option. Type `nasm -f output y` for a list.
   ]],
+
+	-- Date and time macros
+	["__?DATE?__"] = "Returns the assembly **DATE** as strings in ISO 8601 format (YYYY-MM-DD)",
+	["__?TIME?__"] = "Returns the assembly **TIME** as strings in ISO 8601 format (HH:MM:SS)",
+	["__?DATE_NUM?__"] = "Returns the assembly DATE in numeric form (YYYYMMDD)",
+	["__?TIME_NUM?__"] = "Returns the assembly TIME in numeric form (HHMMSS)",
+	["__?UTC_DATE?__"] = "Gives the assembly DATE in **universal time (UTC)** as strings, in ISO 8681 format (YYYY-MM-DD)",
+	["__?UTC_TIME?__"] = "Gives the assembly TIME in **universal time (UTC)** as strings, in ISO 8681 format (HH:MM:SS)",
+	["__?UTC_DATE_NUM?__"] = "Gives the assembly DATE (**universal time format**, numeric form, YYYYMMDD)",
+	["__?UTC_TIME_NUM?__"] = "Gives the assembly TIME (**universal time format**, numeric form, HHMMSS)",
+	["__?POSIX_TIME?__"] = [[
+Returns the POSIX TIME (qword integer).
+
+# What is POSIX TIME?
+- POSIX TIME is a number of seconds that has been from the 1<sup>st</sup> of January in 1970 at 00:00:00 UTC.
+- Calculate the POSIX TIME (unit: seconds):
+
+```
+  POSIX_TIME = current_time - 1970-01-01 00:00:00 (s)
+```
+
+- POSIX TIME helps us compare the time super fast as we only need to compare 2 different integers.
+- It is also easy to calculate the seconds to make a new time.
+- That time is great for the sync between UNIX-like system.
+
+**Expire time** (YYYY-MM-DD):
+- dword (32-bit): 2038-01-19 (Year 2038 problem).
+- qword (64-bit): about the year ~200 000 000 000.
+  ]],
 }

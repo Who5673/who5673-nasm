@@ -173,7 +173,7 @@ use {
       mapping = cmp.mapping.preset.insert({
         ["<Down>"] = cmp.mapping.select_next_item(),
         ["<Up>"] = cmp.mapping.select_prev_item(),
-        ["<Enter>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
     })
   end,
@@ -186,6 +186,9 @@ Now you have done the installation of `who5673-nasm` in `packer.nvim`.
 `who5673-nasm` has many snippets and auto-completions such as:
 - Having completions for 64-bit, 32-bit, 16-bit, 8-bit and segment registers.
 - Supports many Netwide Assembler commands.
+- Supports preprocessors and `SSE`, `AVX` and `AVX-512` Instruction Set Architecture syntax.
+
+## Snippets:
 - sum (snippet): Generate an example of a function in NASM.
 - exit (snippet): Generate the script to exit a program in NASM.
 - function (snippet): Generate a template to help you create a function.
