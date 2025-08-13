@@ -230,4 +230,31 @@ When running only to generate dependencies (because of the `-M` or `-MG` option)
 
 **It is strongly recommended to avoid using this macro if at all possible. It is tremendously easy to generate very strange errors by misusing it, and the semantics may change in future versions of NASM.**
   ]],
+
+	["__?ALIGNMODE?__"] = "Returns the align mode",
+	altreg = [[
+# Alternate Register Names  
+
+Provides numeric register names for all registers. For example:  
+
+`r0l` -> `al`
+`r0h` -> `ah`
+`r1l` -> `cl`
+`r1h` -> `ch`
+`r2l` -> `dl`
+`r2h` -> `dh`
+`r3l` -> `bl`
+`r3h` -> `bh`
+  ]],
+	smartalign = [[
+# Smart `ALIGN` macro
+
+Provides align modes:
+- generic: (default) Works on all x86 CPU. Default jump threshold: 8;
+- nop: Pad out with NOP instructions. Default jump threshold: 16;
+- k7: Optimize for the AMD K7 (Athlon/Althon XP). Works on all x86 CPU. Default jump threshold: 16;
+- k8: Optimize for the AMD K8 (Opteron/Althon X64). Works on all x86 CPU. Default jump threshold: 16;
+- p6: Optimize for Intel CPUs. This is ncompatible with all CPUs of family 5 or lower. The default jump threshold is 16;
+
+  ]],
 }
