@@ -1059,4 +1059,76 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
+	s("float8()", {
+		t("float8("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("float16()", {
+		t("float16("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("bfloat16()", {
+		t("bfloat16("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("float32()", {
+		t("float32("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("float64()", {
+		t("float64("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("float80m()", {
+		t("float80m("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("float80e()", {
+		t("float80e("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("float128l()", {
+		t("float128l("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("float128h()", {
+		t("float128h("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
 })
