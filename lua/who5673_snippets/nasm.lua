@@ -985,4 +985,14 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t("?__"),
 	}),
+
+	-- Floats
+	s("__?float8?__()", {
+		t("__?float8?__("),
+		i(1, "x"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
 })

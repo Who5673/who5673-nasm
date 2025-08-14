@@ -112,6 +112,7 @@ You can turn ON or OFF this alignment.
 	dword = "dword data type (4 bytes = 32 bits).\nC-type relation: int, long int, float.\nSigned range (int): -2_147_483_648 to +2_147_483_647.\nUnsigned range (int): 0 to +4_294_967_296",
 	qword = "qword data type (8 bytes = 64 bits).\nC-type relation: long long int, double.\nSigned range (long long int): -9_223_372_036_854_775_808 to +9_223_372_036_854_775_807.\nUnsigned range (long long int): 0 to +18_446_744_073_709_551_615",
 	tword = "tword data type (10 bytes = 80 bits).\nC-type relation: long double.",
+	tbyte = "Alias for tword.",
 	oword = "(**LARGE, FOR SSE**) oword data type (16 bytes = 128 bits)",
 	yword = "(**ULTRA LARGE, FOR AVX**) yword data type (32 bytes = 256 bits)",
 	zword = "(**SUPER LARGE, FOR AVX-512**) zword data type (64 bytes = 512 bits)",
@@ -257,4 +258,55 @@ Provides align modes:
 - p6: Optimize for Intel CPUs. This is ncompatible with all CPUs of family 5 or lower. The default jump threshold is 16;
 
   ]],
+	fp = [[
+# Package `fp` provides floating point macros for you
+
+Accrording to https://nasm.us/doc/nasmdoc6.html#section-6.3, it provides:  
+
+```
+%define Inf             __?Infinity?__ 
+%define NaN             __?QNaN?__ 
+%define QNaN            __?QNaN?__ 
+%define SNaN            __?SNaN?__ 
+
+%define float8(x)       __?float8?__(x) 
+%define float16(x)      __?float16?__(x) 
+%define bfloat16(x)     __?bfloat16?__(x) 
+%define float32(x)      __?float32?__(x) 
+%define float64(x)      __?float64?__(x) 
+%define float80m(x)     __?float80m?__(x) 
+%define float80e(x)     __?float80e?__(x) 
+%define float128l(x)    __?float128l?__(x) 
+%define float128h(x)    __?float128h?__(x)
+```
+  ]],
+
+	-- Floating point macros
+	-- Not a numbers
+	["__?Infinity?__"] = "Infinity number macro",
+	Inf = "(Package fp required) Infinity number macro",
+	["__?QNaN?__"] = "Quiet Not a Number",
+	["__?SNaN?__"] = "Signaling Not a Number",
+	NaN = [[
+(required fp package used)
+**By default, "Not a Number" is "Quiet Not a Number"**.
+Not a Number - Propagates through most operations without triggering exceptions.
+Used for "ordinary" invalid results.
+
+Exponent = all 1’s, MSB of fraction (quiet bit) = 1.
+  ]],
+	QNaN = [[
+(required fp package used)
+Quiet Not a Number - Propagates through most operations without triggering exceptions.
+Used for "ordinary" invalid results.
+
+Exponent = all 1’s, MSB of fraction (quiet bit) = 1.
+  ]],
+	SNaN = [[
+(required fp package used)
+Signaling Not a Number - Intended to **signal an invalid operation exception** when used in most operations (unless explicitly dealed with).
+
+Exponent = all 1’s, MSB of fraction = 0 (but fraction ≠ 0).
+  ]],
+	-- Floats
 }
