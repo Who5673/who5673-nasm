@@ -987,7 +987,7 @@ ls.add_snippets("nasm", {
 	}),
 
 	-- Floats
-	s("__?float8?__()", {
+	s("__?float8?__", {
 		t("__?float8?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -995,7 +995,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?float16?__()", {
+	s("__?float16?__", {
 		t("__?float16?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1003,7 +1003,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?bfloat16?__()", {
+	s("__?bfloat16?__", {
 		t("__?bfloat16?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1011,7 +1011,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?float32?__()", {
+	s("__?float32?__", {
 		t("__?float32?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1019,7 +1019,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?float64?__()", {
+	s("__?float64?__", {
 		t("__?float64?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1027,7 +1027,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?float80m?__()", {
+	s("__?float80m?__", {
 		t("__?float80m?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1035,7 +1035,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?float80e?__()", {
+	s("__?float80e?__", {
 		t("__?float80e?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1043,7 +1043,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?float128l?__()", {
+	s("__?float128l?__", {
 		t("__?float128l?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1051,7 +1051,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("__?float128h?__()", {
+	s("__?float128h?__", {
 		t("__?float128h?__("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1059,7 +1059,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float8()", {
+	s("float8", {
 		t("float8("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1067,7 +1067,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float16()", {
+	s("float16", {
 		t("float16("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1075,7 +1075,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("bfloat16()", {
+	s("bfloat16", {
 		t("bfloat16("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1083,7 +1083,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float32()", {
+	s("float32", {
 		t("float32("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1091,7 +1091,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float64()", {
+	s("float64", {
 		t("float64("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1099,7 +1099,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float80m()", {
+	s("float80m", {
 		t("float80m("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1107,7 +1107,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float80e()", {
+	s("float80e", {
 		t("float80e("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1115,7 +1115,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float128l()", {
+	s("float128l", {
 		t("float128l("),
 		i(1, "x"),
 		f(function(_, snip)
@@ -1123,7 +1123,7 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
-	s("float128h()", {
+	s("float128h", {
 		t("float128h("),
 		i(1, "x"),
 		f(function(_, snip)
