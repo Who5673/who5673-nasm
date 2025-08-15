@@ -194,7 +194,7 @@ You can turn ON or OFF this alignment.
 	[".text"] = ".text section (code)",
 	[".nolist"] = ".nolist for disabling listing expansion",
 	["_start"] = "Program entry point",
-	global = "Exporting Symbols to Other Modules or (or and) tell the ld linker what is the entry point of the script",
+	global = "Exporting Symbols to Other Modules or (or and) tell the `ld` linker what is the entry point of the script",
 	db = "Define byte (1 byte)",
 	dw = "Define word (2 bytes, 16-bit)",
 	dd = "Define double word (4 bytes, 32-bit)",
