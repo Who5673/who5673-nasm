@@ -42,9 +42,51 @@ return {
 	["and"] = "Bitwise AND",
 	["or"] = "Bitwise OR",
 	cmp = "Compare operands",
-	default = "This code must be at the first line of a NASM script if you combine with rel in order to combine and extern with C/C++ via gcc/g++.",
+	default = [[
+This command is used to **change the assembler defaults** in Netwide Assembler.  
+
+`default` can be set to rel & abs and bnd & nobnd. For example:  
+
+```
+default rel
+```
+  ]],
 	to = "Specify the target st(i) to be added in Floating Point Unit stack, default thing used to add is st0.\n Example: fadd to st2",
-	rel = "rel command: Use a relative address for something",
+	abs = [[
+abs command: RIP-absolute addressing.
+This is the default addressing unless overridden with rel.
+
+mov rax, [msg]       ; msg absolute address
+mov rax, [rel msg]   ; msg relative address
+
+section .data
+  msg db "Hello world", 0x0a, 0x00
+]],
+	rel = [[
+rel command: RIP-relative addressing.
+`default rel`, which is used to change the default addressing from absolute to relative, is disabled with `default abs`
+  ]],
+	bnd = [[
+All BND prefix available instructions following this directive are prefixed with BND if this is the default
+
+```
+default bnd
+call print_hello            ; BND will be prefixed
+nobnd call print_hello      ; BND will NOT be prefixed
+
+print_hello:
+  mov rax, 0x1
+  mov rdi, 0x1
+  mov rsi, msg
+  mov rdx, len
+  syscall
+  ret
+
+section .data
+  msg db "Hello world", 0x0a
+  len equ $-msg
+```
+  ]],
 	neg = "Compute the **absolute value** (abs) of a register",
 	lea = "lea command to work with memory",
 	rep = "Repeat string operation",
@@ -53,7 +95,15 @@ return {
 	idiv = "Divide (**signed**) 2 numbers",
 	int = "Interrupt (normally for 32-bit architecture).\n**syscall**: int 0x80.\n**BIOS video services**: int 0x10.\n**BIOS disk services**: int 0x13.\n**DOS interrupt**: int 0x21.\n**Breakpoint**: int 0x03.\n**Divide By Zero**: int 0x00.",
 	cli = "Clear interrupt",
-	bits = "bits command",
+	bits = [[
+Target processor mode (16, 32, 64).
+For example:
+```
+bits 16 ; Processor 16 bit, great for making bootloaders]
+```
+  ]],
+	use16 = "Alias for `bits 16`",
+	use32 = "Alias for `bits 32`",
 	org = "org command. ORG 0x7C00 to make BIOS load the bootsector at this address",
 	hlt = "(**Halt**) Wait for the hardware signal, does not spin CPU",
 	ret = "Return from procedure, **rax** is the most important return value if you create a label that returns an integer",
@@ -144,7 +194,7 @@ You can turn ON or OFF this alignment.
 	[".text"] = ".text section (code)",
 	[".nolist"] = ".nolist for disabling listing expansion",
 	["_start"] = "Program entry point",
-	global = "Declare a symbol globally visible",
+	global = "Exporting Symbols to Other Modules or (or and) tell the ld linker what is the entry point of the script",
 	db = "Define byte (1 byte)",
 	dw = "Define word (2 bytes, 16-bit)",
 	dd = "Define double word (4 bytes, 32-bit)",

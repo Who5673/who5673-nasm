@@ -92,6 +92,22 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t({ "", "\t" }),
 	}),
+	s("segment", {
+		t("segment "),
+		i(1, "segmentname"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t" }),
+	}),
+	s("absolute", {
+		t("absolute "),
+		i(1, "LABEL"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t" }),
+	}),
 	s("basicoutput", {
 		t({
 			"mov rax, 1",
