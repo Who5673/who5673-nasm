@@ -6,7 +6,7 @@ local f = ls.function_node
 
 ls.add_snippets("nasm", {
 	-- Generate an example  NASM program
-	s("printHello", {
+	s("!", {
 		t({
 			"%macro exit 1",
 			"\tmov rax, 60",

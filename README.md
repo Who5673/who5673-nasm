@@ -193,7 +193,7 @@ Now you have done the installation of `who5673-nasm` in `packer.nvim`.
 - exit (snippet): Generate the script to exit a program in NASM.
 - function (snippet): Generate a template to help you create a function.
 - program (snippet): Make a layout of NASM script so as to let you code faster (as you do not need to code the start of the program).
-- printHello (snippet): Generate a demo script in NASM (it prints "Hello world") when being compiled if you do not modifier it after using this snippet.
+- ! (snippet): Generate a demo script in NASM (it prints "Hello world") when being compiled if you do not modifier it after using this snippet.
 - basicoutput (snippet): Generate a tamplate of a basic output which prints the text into `stdout` (terminal screen).
 - basicinput (snippet): Generate a template of a basic prompt (user input) which prompts the user to take down their texts into the variable in the `stdin`.
 

@@ -87,6 +87,7 @@ section .data
   len equ $-msg
 ```
   ]],
+	nobnd = "All BND prefix available instructions following this directive are not prefixed with BND.",
 	neg = "Compute the **absolute value** (abs) of a register",
 	lea = "lea command to work with memory",
 	rep = "Repeat string operation",
@@ -104,7 +105,7 @@ bits 16 ; Processor 16 bit, great for making bootloaders]
   ]],
 	use16 = "Alias for `bits 16`",
 	use32 = "Alias for `bits 32`",
-	org = "org command. ORG 0x7C00 to make BIOS load the bootsector at this address",
+	org = "org command to organize where BIOS will load. ORG 0x7C00 to make BIOS load the bootsector at this address",
 	hlt = "(**Halt**) Wait for the hardware signal, does not spin CPU",
 	ret = "Return from procedure, **rax** is the most important return value if you create a label that returns an integer",
 	leave = "Cleans the stack frame and restore the previous value (which is initialized before entering)",
