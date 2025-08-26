@@ -6,7 +6,7 @@ local f = ls.function_node
 
 ls.add_snippets("nasm", {
 	-- Generate an example  NASM program
-	s("!", {
+	s("!!!", {
 		t({
 			"%macro exit 1",
 			"\tmov rax, 60",
@@ -36,7 +36,7 @@ ls.add_snippets("nasm", {
 		i(0),
 	}),
 	-- Generate a template for you to start coding faster
-	s("program", {
+	s("!", {
 		t("section .data"),
 		t({ "", "\t" }),
 		i(1, ""),
