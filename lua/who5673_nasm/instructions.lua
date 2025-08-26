@@ -105,7 +105,7 @@ bits 16 ; Processor 16 bit, great for making bootloaders]
   ]],
 	use16 = "Alias for `bits 16`",
 	use32 = "Alias for `bits 32`",
-	org = "org command to organize where BIOS will load. ORG 0x7C00 to make BIOS load the bootsector at this address",
+	org = "org command to secify the binary file program origin. ORG 0x7C00 to make BIOS load the bootsector at this address",
 	hlt = "(**Halt**) Wait for the hardware signal, does not spin CPU",
 	ret = "Return from procedure, **rax** is the most important return value if you create a label that returns an integer",
 	leave = "Cleans the stack frame and restore the previous value (which is initialized before entering)",
@@ -116,6 +116,7 @@ bits 16 ; Processor 16 bit, great for making bootloaders]
 	sar = "Shift bits right (>>) (**signed**).\n**Syntax**: `sar destination, source`.",
 	syscall = "Call the system kernel",
 	extern = "Declare external function (usually from libraries)",
+	required = "Declare external function (usually from libraries). This command does not generate unknown symbols as that prevents header files.\x0aIf the old behavior is required, use REQUIRED keyword instead.",
 	align = [[
 align N           ; align on N-byte boundary (common values: 4, 16, 64)
 align 8,db 0x0a   ; pad with 0x0As rather than NOPs
@@ -196,6 +197,49 @@ You can turn ON or OFF this alignment.
 	[".nolist"] = ".nolist for disabling listing expansion",
 	["_start"] = "Program entry point",
 	global = "Exporting Symbols to Other Modules or (or and) tell the `ld` linker what is the entry point of the script",
+	common = [[
+# Defining common data areas.
+**According to The Netwide Assembler HTML document**:
+## A common variable is much like a global variable declared in the uninitialized data section.
+Therefore,
+
+```
+common intvar 4
+```
+
+is similar in function to:
+
+```
+global intvar
+section .bss
+intvar resd 1
+```
+
+## Like GLOBAL and EXTERN, COMMON supports object-format specific extensions. For example, the obj format allows common variables to be NEAR or FAR, and the ELF format allows you to specify the alignment requirements of a common variable:
+
+```
+common commvar 4:near   ; works in **OBJ (Windows)**
+common intarray 100:4   ; works in **ELF (Linux)**: 4 bytes aligned
+```
+## The primitive form of COMMON differs from the user-level form only in that it can take only one argument at a time.
+  ]],
+	static = [[
+# Local symbols within Modules, should be named according to the global mangling rules (named by analogy with the C keyword static as applied to functions or global variables).
+Note: Unlike GLOBAL and EXTERN, **static does not allow object formats to accept private extensions**.
+
+```
+static my_func
+my_func:
+  ; script for my_func
+  ret ; If this is not the entrypoint and works like a function
+```
+  ]],
+	prefix = "Prepend the argument to all EXTERN, COMMON, STATIC, and GLOBAL symbols.\x0a**G stands for GLOBAL and L stands for LOCAL**",
+	gprefix = "Like `prefix`",
+	lprefix = "Prepend the argument to all other symbols such as local labels and backend defined symbols.",
+	postfix = "Append the argument to all EXTERN, COMMON, STATIC, and GLOBAL symbols.",
+	gpostfix = "Like `postfix`",
+	lpostfix = "Append the argument to all other symbols such as local labels and backend defined symbols.",
 	db = "Define byte (1 byte)",
 	dw = "Define word (2 bytes, 16-bit)",
 	dd = "Define double word (4 bytes, 32-bit)",
@@ -359,5 +403,29 @@ Signaling Not a Number - Intended to **signal an invalid operation exception** w
 
 Exponent = all 1’s, MSB of fraction = 0 (but fraction ≠ 0).
   ]],
-	-- Floats
+	-- Warnings
+	["+warning-class"] = "enable warnings for warning-class",
+	["-warning-class"] = "disable warnings for warning-class",
+	["*warning-class"] = "restore warning-class to the original value, either the default value or as specified on the command line.",
+
+	-- Output formats
+	bin = "Flat-Form Binary Output - Output Format",
+	ith = "Intel Hex Output - Output Format",
+	srec = "Motorola S-Records Output - Output Format",
+	obj = "Microsoft OMF Object Files - Output Format",
+	win32 = "Microsoft Win32 Object Files - Output Format",
+	win64 = "Microsoft Win64 Object Files - Output Format",
+	coff = "Common Object File Format - Output Format",
+	macho32 = "Mach Object File Format (32-bit) - Output Format",
+	macho64 = "Mach Object File Format (64-bit) - Output Format",
+	elf32 = "Executable and linkable Format Object Files (32-bit) - Output Format",
+	elfx32 = [[
+Executable and linkable Format Object Files (32-bit) - Output Format.
+The elfx32 format is used for the x32 ABI, which is a 32-bit ABI with the CPU in 64-bit mode.
+  ]],
+	elf64 = "Executable and linkable Format Object Files (64-bit) - Output Format",
+	aout = "Linux `a.out` Object Files - Output Format",
+	aoutb = "NetBSD, FreeBSD, OpenBSD a.out Object Files - Output Format",
+	as86 = "Minix/Linux as86 Object Files - Output Format",
+	dbg = "Debugging Format - Output Format",
 }

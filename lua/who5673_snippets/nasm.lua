@@ -1147,4 +1147,30 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
+
+	-- Assembler directives
+	s("cpu", {
+		t("cpu "),
+		i(1, "cpu_keyword"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(""),
+	}),
+	s("float", {
+		t("float "),
+		i(1, "float_constant"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(""),
+	}),
+	s("[warning]", {
+		t("[warning "),
+		i(1, "directive"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t("]"),
+	}),
 })
