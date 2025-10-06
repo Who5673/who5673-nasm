@@ -375,6 +375,8 @@ Accrording to https://nasm.us/doc/nasmdoc6.html#section-6.3, it provides:
 %define float128h(x)    __?float128h?__(x)
 ```
   ]],
+	masm = "MASM compatibility",
+	vtern = "Ternary Logic Assist",
 
 	-- Floating point macros
 	-- Not a numbers
@@ -428,4 +430,13 @@ The elfx32 format is used for the x32 ABI, which is a 32-bit ABI with the CPU in
 	aoutb = "NetBSD, FreeBSD, OpenBSD a.out Object Files - Output Format",
 	as86 = "Minix/Linux as86 Object Files - Output Format",
 	dbg = "Debugging Format - Output Format",
+
+	jmpabs = "Equal to jmp abs, directly jump anywhere in the address space in 64-bit mode",
+	vaddpd = "(For VEX prefix) compact Non-Destructive Source or New Data Destination operands - compact meaning that if a user passes two operands instead of three, one of them is simply copied to be used as the source or destination",
+	bndstx = [[This is used to spilt effective addressing syntax. According to the real document: **base=rax, index=rbx, scale=1, displacement=3**]],
+	nf = "Supress Modifying Flags",
+	zu = "Zero Upper",
+	ccmpl = "",
+	push2p = "PUSH extensions: push two registers at the same time",
+	pop2p = "POP extensions: pop two registers at the same time",
 }
