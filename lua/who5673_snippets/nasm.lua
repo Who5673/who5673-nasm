@@ -108,30 +108,6 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t({ "", "\t" }),
 	}),
-	s("basicoutput", {
-		t({
-			"mov rax, 1",
-			"mov rdi, 1",
-			"mov rsi, ",
-		}),
-		i(1, "printvalue"),
-		f(function(_, snip)
-			return snip.env.SELECT_RAW or ""
-		end, {}, { user_args = {} }),
-		t({ "", "mov rdx, len", "syscall" }),
-	}),
-	s("basicinput", {
-		t({
-			"mov rax, 0",
-			"mov rdi, 0",
-			"mov rsi, ",
-		}),
-		i(1, "buffervalue"),
-		f(function(_, snip)
-			return snip.env.SELECT_RAW or ""
-		end, {}, { user_args = {} }),
-		t({ "", "mov rdx, 30    ; You must create uninitialized data using .bss section first", "syscall" }),
-	}),
 	s("%include", {
 		t('%include "'),
 		i(1, "filepath"),
