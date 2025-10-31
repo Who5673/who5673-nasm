@@ -132,6 +132,14 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(""),
 	}),
+	s("%realpath", {
+		t("%realpath("),
+		i(1, "PATH"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
 	s("%depend", {
 		t('%depend "'),
 		i(1, "filepath"),
@@ -207,7 +215,6 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t(" "),
-		t("value"),
 	}),
 	s("%idefine", {
 		t("%idefine "),
@@ -216,7 +223,6 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t(" "),
-		t("value"),
 	}),
 	s("%xdefine", {
 		t("%xdefine "),
@@ -225,7 +231,6 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t(" "),
-		t("value"),
 	}),
 	s("%assign", {
 		t("%assign "),
@@ -243,6 +248,9 @@ ls.add_snippets("nasm", {
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t({ "", "\t", "%endmacro" }),
+	}),
+	s("%exitmacro", {
+		t("%exitmacro"),
 	}),
 	s("%imacro", {
 		t("%imacro "),
@@ -420,6 +428,14 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(")"),
 	}),
+	s("%selbits", {
+		t("%selbits("),
+		i(1, "different_ISA_registers"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
 	s("%tok", {
 		t("%tok("),
 		i(1, "value"),
@@ -481,6 +497,46 @@ ls.add_snippets("nasm", {
 	s("%ifdef", {
 		t("%ifdef "),
 		i(1, "singlelinemacro"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t", "%endif" }),
+	}),
+	s("%ifdefalias", {
+		t("%ifdefalias "),
+		i(1, "alias"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t", "%endif" }),
+	}),
+	s("%ifdirective", {
+		t("%ifdirective "),
+		i(1, "directive"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t", "%endif" }),
+	}),
+	s("%ifusable", {
+		t("%ifusable "),
+		i(1, "standard_package"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t", "%endif" }),
+	}),
+	s("%ifusing", {
+		t("%ifusing "),
+		i(1, "standard_package"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t({ "", "\t", "%endif" }),
+	}),
+	s("%iffile", {
+		t("%iffile "),
+		i(1, "FILE"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
@@ -907,6 +963,14 @@ ls.add_snippets("nasm", {
 	}),
 	s("%fatal", {
 		t('%fatal "'),
+		i(1, "message"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t('"'),
+	}),
+	s("%note", {
+		t('%note "'),
 		i(1, "message"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
