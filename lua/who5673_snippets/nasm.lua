@@ -452,6 +452,31 @@ ls.add_snippets("nasm", {
 		end, {}, { user_args = {} }),
 		t(""),
 	}),
+
+	-- %find preprocessors
+	s("%find", {
+		t("%find("),
+		i(1, "target_char, target_string_or_charlist"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+	s("%findi", {
+		t("%findi("),
+		i(1, "target_char, target_string_or_charlist"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t(")"),
+	}),
+
+	s("%null", {
+		t("%null("),
+		i(1),
+		t(")"),
+	}),
+
 	s("enter", {
 		t("enter "),
 		i(1, "imm16, imm8"),

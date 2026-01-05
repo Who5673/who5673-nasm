@@ -266,7 +266,15 @@ my_func:
 
 	-- Standard macros:
 	["__?NASM_VERSION_ID?__"] = "Returns Netwide Assembler version ID (**dword integer**)",
+
 	["__?NASM_VER?__"] = "Returns Netwide Assembler current version inside a script (**bytes data**)",
+
+	["__?NASM_HAS_IFDIRECTIVE?__"] = [[
+  - Directive Probing Support: This macro is defined if this version of NASM supports the preprocessor tests like:
+  **%ifdirective, %ifusable, %ifusing**;
+  - Supports using %ifdef to test for the presence of preprocessor functions;
+  ]],
+
 	["__?FILE?__"] = "Returns the name of the input file",
 	["__?LINE?__"] = "Returns the number of current line in a file",
 	["__?BITS?__"] = [[
