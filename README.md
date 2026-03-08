@@ -201,7 +201,7 @@ Currently, these are snippets which can be used:
 | @@@ | Make a layout of NASM script so as to let you code faster (as you do not need to code the start of the program). |
 | @ | Generate a demo script in NASM (it prints "Hello world") when being compiled if you do not modifier it after using this snippet. |
 
-These are removed snippets. They have been added in earlier versions of this plugin: 
+These are removed snippets. They were added in earlier versions of this plugin: 
 
 | Snippets (removed) | Removing day | Functions |
 | ------------------  | ------------ | --------- |
