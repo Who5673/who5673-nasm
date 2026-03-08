@@ -243,7 +243,7 @@ Have fun while using my plugin.
 # 🪪 Metadata about this plugin:
 
 ## Product meta information:
-Copyright &copy; 2025 Who5673. All Rights Reserved.  
+Copyright &copy; 2025 - 2026 Who5673. All Rights Reserved.  
 
 This is an official NASM plugin made by Who5673.  
 
