@@ -203,7 +203,7 @@ Currently, these are snippets which can be used:
 
 These are removed snippets. They have been added in earlier versions of this plugin: 
 
-| Snippets (cremoved) | Removing day | Functions |
+| Snippets (removed) | Removing day | Functions |
 | ------------------  | ------------ | --------- |
 | basicoutput | 10/11/2025 |: Generate a tamplate of a basic output which prints the text into `stdout` (terminal screen). |
 | basicinput  | 10/11/2025 |: Generate a template of a basic prompt (user input) which prompts the user to take down their texts into the variable in the `stdin`. |
