@@ -183,13 +183,13 @@ use {
 
 Now you have done the installation of `who5673-nasm` in `packer.nvim`.
 
-## Basic features:
+## 🔨 Basic features:
 `who5673-nasm` has many snippets and auto-completions such as:
 - 👉🏻 Having completions for 64-bit, 32-bit, 16-bit, 8-bit and segment registers;
 - 👉🏽 Supports many Netwide Assembler commands;
 - 👉🏿 Supports preprocessors and `SSE`, `AVX` and `AVX-512` Instruction Set Architecture syntax;
 
-## Snippets:
+## ↘️ Snippets:
 
 Currently, these are snippets which can be used:
 
@@ -212,36 +212,40 @@ I also have some example screens for you to know what you get after installing t
 
 ![Demo who5673-nasm plugin](media/gitnvim.gif)  
 
-## How to use snippets in who5673-nasm:
+## ↘️ Completions
+
+Maybe not all the Netwide Assembler's commands are showed by these things. I will update them in order to keep up with `nasm` syntax as soon as I can.
+
+## ↘️ How to use snippets and completions in who5673-nasm:
 Just like how you deal with snippets and completions in Neovim.  
 - Choose the snippet or completion you want to use. 
-- `LuaSnip` will initialize the snippets.
-- `nvim-cmp` will show them, also initialize the completions.  
+- `LuaSnip` initializes snippets.
+- `nvim-cmp` shows them, it also initializes completions.  
 So do not be worry that the snippets and completions will not appear. I also place my contact at `contact.txt` in GitHub link. I, nevertheless, still need time to read your report.
 
-## Note:
-- As `nvim` is a hard Integrated Develop Environment for most people, I think you might want not to configure more things before using this plugin effectively.
-- Because of the high difficulty of Lua and plugins in Neovim, the update I make can have bugs and errors so please sympathise.
-- Assembly language has a language server named `asm-lsp` (GitHub link: [https://github.com/bergercookie/asm-lsp](https://github.com/bergercookie/asm-lsp)) and a formatter named `asmfmt` (GitHub link: [https://github.com/klauspost/asmfmt](https://github.com/klauspost/asmfmt)). From that reason, __I do not want to create other things like debugger and real-time error in this plugin__. You need to use them or find other ones.
+## ⚠️ Note:
+- As `nvim` is a hard Integrated Develop Environment for most people, I think you might want not to configure more things before using this plugin effectively;
+- Because of the high difficulty of Lua and plugins in Neovim, the update I make can have bugs and errors so please sympathise;
+- Assembly language has a language server named `asm-lsp` (GitHub link: [https://github.com/bergercookie/asm-lsp](https://github.com/bergercookie/asm-lsp)) and a formatter named `asmfmt` (GitHub link: [https://github.com/klauspost/asmfmt](https://github.com/klauspost/asmfmt)). From that reason, __I do not want to create other things like debugger and real-time error in this plugin__. You need to use them or find other ones;
 - Switch your thought to the case you are coding Assembly Languages and you think it is hard to code it. If you were in that situation, I would like to ask you a question:  
 ___Would you like to create and develop plugins for programming Assembly Languages in the world, especially in Lazy.nvim and Mason.nvim?___  
-Come up with and answer that question if you want. You do not need to send your answer to me.  
-- Even though this plugin is not famous anymore, I will carry on developing newer versions of this plugin with no reasons.  
+Come up with and answer that question if you want. You do not need to send your answer to me;
+- Even though this plugin is not famous anymore, I will carry on developing newer versions of this plugin with no reasons;
 
-## See also
+## 👀 See also
 - `coc-nasm` is another repository that is make by me (Who5673) for programming NASM language using `coc.nvim`. You can see that plugin by going to this website:  
 [https://github.com/Who5673/coc-nasm](https://github.com/Who5673/coc-nasm)  
 
-- Thanks to [The Netwide Assembler Hyper Text Markup Language document](https://www.nasm.us/xdoc/2.16.03/html/nasmdoc0.html) for providing me with many important skills about programming this Assembler.  
+- Thanks to [The Netwide Assembler Hyper Text Markup Language document](https://www.nasm.us/doc/nasmdoc0.html) for providing me with many important skills about programming this Assembler.  
 
 Have fun while using my plugin.  
 
-# Metadata about this plugin:
+# 🪪 Metadata about this plugin:
 
 ## Product meta information:
 Copyright &copy; 2025 Who5673. All Rights Reserved.  
 
 This is an official NASM plugin made by Who5673.  
 
-## License: 
+## 📄 License: 
 MIT
