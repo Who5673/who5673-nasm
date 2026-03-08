@@ -47,7 +47,7 @@ The plugin named `coc-nasm` has been released since the 6<sup>th</sup> of July, 
 
 ## ℹ️ Basic information about who5673-nasm:
 __Manufacturing date__ : The 13<sup>th</sup> of July 2025  
-**GitHub link**: `https://github.com/Who5673/who5673-nasm` (current page)
+**GitHub link**: `https://github.com/Who5673/who5673-nasm`
 
 ## 🔧 Our website is maintaining:
 ```
