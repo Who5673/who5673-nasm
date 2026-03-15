@@ -119,6 +119,9 @@ return {
           { name = "nasm_registers" },
           { name = "nasm_instructions" },
         },
+        mapping = cmp.mapping.preset.insert({
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
       })
     end,
   },
@@ -172,8 +175,6 @@ use {
         { name = "nasm_instructions" },
       }),
       mapping = cmp.mapping.preset.insert({
-        ["<Down>"] = cmp.mapping.select_next_item(),
-        ["<Up>"] = cmp.mapping.select_prev_item(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
     })
