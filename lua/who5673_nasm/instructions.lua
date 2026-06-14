@@ -19,6 +19,7 @@ return {
 	fldcw = "Push a value into Floating Point Unit control word for dealing with exceptions, accuracy, rounding numbers,...\nSyntax: `fldcw [mem16]`. (**Hint: [variable] rounds toward zero with variable = 0x0F7F**).\n00 -> Round to nearest; 01 -> round down; 10 -> Round up; 11 -> Truncate\n. **Default: 0x037F(hex) = 895(dec)**.",
 	-- Normal commands:
 	-- mov
+
 	mov = "Move data from source (src) to destination (dest), normal way.\nSyntax: mov dest, src    ; with dest is memory (mem) XOR src is memory (mem).\nreg stands for register, mem stands for memory and imm stands for immediate.",
 	movsb = [[
 		Move 1-byte data from src to dest, same with `mov byte`.
@@ -34,6 +35,39 @@ return {
 	movso = "**FOR SSE**. Move 16-byte data from src to dest, same with `mov oword`",
 	movsy = "**FOR AVX**. Move 32-byte data from src to dest, same with `mov yword`",
 	movsz = "**FOR AVX-512**. Move 64-byte data from src to dest, same with `mov zword`",
+	movups = "This stands for **Move unaligned packed single precisions**.\x0aIt is normally used like `movaps`.",
+	movaps = [[This stands for **Move aligned packed single precisions**.
+Normally, this syntax is used for SSE, AVX and AVX-512 registers. For example:
+```
+movaps xmm0, xmm1
+```
+  ]],
+	vmovaps = "Move aligned packed single-precision floating-point values",
+	vmovups = "Move unaligned packed single-precision floating-point values",
+	kmovw = "Move a 16-bit mask value between a mask register and a general-purpose register or memory",
+
+	addps = "Add packed single precisions",
+	vaddps = [[Add packed single precisions.
+**The V* versions (VADDPS, VANDPS, VXORPS, VORPS, VMOVAPS, VMOVUPS) are 
+AVX/AVX-512 encodings that support wider registers (YMM, ZMM) and usually 
+use a three-operand format.**
+
+For instance:
+```
+vaddps ymm0, ymm1, ymm2
+```
+computes:
+```
+ymm0 = ymm1 + ymm2
+```
+without overwriting either source register.
+]],
+	andps = "bitwise AND (packed single precisions)",
+	vandps = "bitwise AND (packed single precisions)",
+	xorps = "bitwise XOR (packed single precisions)",
+	vxorps = "bitwise XOR (packed single precisions)",
+	orps = "bitwise OR (packed single percisions)",
+	vorps = "bitwise OR (packed single percisions)",
 	inc = "Increment operand by 1",
 	dec = "Decrement operand by 1",
 	add = "Add source to destination",
