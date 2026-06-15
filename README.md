@@ -174,7 +174,7 @@ use {
         { name = "nasm_instructions" },
       }),
       mapping = cmp.mapping.preset.insert({
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<Enter>"] = cmp.mapping.confirm({ select = true }), -- I use <Enter> instead of carriage return <CR>
       }),
     })
   end,
@@ -184,10 +184,10 @@ use {
 Now you have done the installation of `who5673-nasm` in `packer.nvim`.
 
 ## 🔨 Basic features:
-`who5673-nasm` has many snippets and auto-completions such as:
+`who5673-nasm` has many snippets and completions such as:
 - 👉🏻 Having completions for 64-bit, 32-bit, 16-bit, 8-bit and segment registers;
-- 👉🏽 Supports many Netwide Assembler commands;
-- 👉🏿 Supports preprocessors and `SSE`, `AVX` and `AVX-512` Instruction Set Architecture syntax;
+     After June 14<sup>th</sup>, 2026, `who5673-nasm` also supports more SSE, AVX and AVX-512 ISA syntaxes; 
+- 👉🏽 Supports many Netwide Assembler commands and preprocessors;
 
 ## ↘️ Snippets:
 
@@ -224,6 +224,7 @@ Just like how you deal with snippets and completions in Neovim.
 So do not be worry that the snippets and completions will not appear. I also place my contact at `contact.txt` in GitHub link. I, nevertheless, still need time to read your report.
 
 ## ⚠️ Note:
+- Different from `coc-nasm` and many plugins, `who5673-nasm` does not have a specific version;
 - As `nvim` is a hard Integrated Develop Environment for most people, I think you might want not to configure more things before using this plugin effectively;
 - Because of the high difficulty of Lua and plugins in Neovim, the update I make can have bugs and errors so please sympathise;
 - Assembly language has a language server named `asm-lsp` (GitHub link: [https://github.com/bergercookie/asm-lsp](https://github.com/bergercookie/asm-lsp)) and a formatter named `asmfmt` (GitHub link: [https://github.com/klauspost/asmfmt](https://github.com/klauspost/asmfmt)). From that reason, __I do not want to create other things like debugger and real-time error in this plugin__. You need to use them or find other ones;
