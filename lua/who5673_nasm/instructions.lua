@@ -71,6 +71,8 @@ without overwriting either source register.
 	inc = "Increment operand by 1",
 	dec = "Decrement operand by 1",
 	add = "Add source to destination",
+	adc = "",
+	sbb = "",
 	sub = "Subtract source from destination",
 	xor = "Bitwise XOR",
 	["and"] = "Bitwise AND",
@@ -332,6 +334,8 @@ Otherwise, it returns `null`.
 
 The debug format can be found using `-F` and `-g` option. Type `nasm -f output y` for a list.
   ]],
+	["__?LIST_OPTIONS?__"] = "Current listing options containing a quoted string",
+	["__?LIST_OPTIONS_DEFAULT?__"] = "Default listing options specified by the user on the cli",
 
 	-- Date and time macros
 	["__?DATE?__"] = "Returns the assembly **DATE** as strings in ISO 8601 format (YYYY-MM-DD)",
