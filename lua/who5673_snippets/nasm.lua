@@ -243,14 +243,24 @@ ls.add_snippets("nasm", {
 	}),
 	s("%macro", {
 		t("%macro "),
-		i(1, "[macroname] [number of parameters]"),
+		i(1, "[macroname]"),
+		f(function(_, snip)
+			return snip.env.SELECT_RAW or ""
+		end, {}, { user_args = {} }),
+		t("\x20"),
+		i(1, "[number of parameters]"),
 		f(function(_, snip)
 			return snip.env.SELECT_RAW or ""
 		end, {}, { user_args = {} }),
 		t({ "", "\t", "%endmacro" }),
 	}),
-	s("%exitmacro", {
-		t("%exitmacro"),
+	s("exitmacro", {
+		t({
+			"%macro exitmac 1",
+			"\tmov rax, 60",
+			"\tmov rdi, %1",
+			"syscall",
+		}),
 	}),
 	s("%imacro", {
 		t("%imacro "),
